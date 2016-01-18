@@ -22,19 +22,6 @@
     "web": "Microsoft.AspNet.Server.Kestrel",
   },
 
-  "frameworks": {
-    "dnx451": {
-      "dependencies": {
-        "jcPVS.PCL": "1.0.0-*"
-      }
-    },
-    "dnxcore50": {
-      "dependencies": {
-        "jcPVS.PCL": "1.0.0-*"
-      }
-    }
-  },
-
   "exclude": [
     "wwwroot",
     "node_modules"
