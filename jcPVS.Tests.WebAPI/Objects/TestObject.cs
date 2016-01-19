@@ -2,7 +2,7 @@
 
 namespace jcPVS.Tests.WebAPI.Objects {
     public class TestObject {
-        [jcPVS("1.5")]
+        [jcPVS(125)]
         public string Name { get; set; }
 
         public int ID { get; set; }

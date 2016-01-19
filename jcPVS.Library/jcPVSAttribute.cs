@@ -2,12 +2,12 @@
 
 namespace jcPVS.Library {
     public class jcPVSAttribute : Attribute {
-        private string minVersion;
+        private readonly int minAPIVersion;
 
-        public jcPVSAttribute(string MinVersion) {
-            minVersion = MinVersion;
+        public jcPVSAttribute(int MinAPIVersion) {
+            minAPIVersion = MinAPIVersion;
         }
 
-        public string GetMinVersion() => minVersion;
+        public int GetMinAPIVersion() => minAPIVersion;
     }
 }
