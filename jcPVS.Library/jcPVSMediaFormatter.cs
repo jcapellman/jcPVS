@@ -18,30 +18,34 @@ namespace jcPVS.Library {
             SupportedMediaTypes.Add(new MediaTypeHeaderValue(json));
         }
 
-        readonly Func<Type, bool> SupportedType = (type) => {
-            if (type == typeof(Url) || type == typeof(IEnumerable<Url>))
+        readonly Func<Type, bool> _supportedType = (type) => {
+            if (type == typeof (Url) || type == typeof (IEnumerable<Url>)) {
                 return true;
+            }
 
             return false;
         };
 
         public override bool CanReadType(Type type) {
-            return SupportedType(type);
+            return _supportedType(type);
         }
 
         public override bool CanWriteType(Type type) {
-            return SupportedType(type);
+            return _supportedType(type);
         }
 
         public override Task WriteToStreamAsync(Type type, object value, Stream writeStream, HttpContent content,
             TransportContext transportContext) {
             return Task.Factory.StartNew(() => {
-                if (type == typeof(Url) || type == typeof(IEnumerable<Url>))
-                    BuildObject(value, writeStream, content.Headers.ContentType.MediaType, Convert.ToInt32(content.Headers.GetValues("API_VERSION")));
+                if (type == typeof (Url) || type == typeof (IEnumerable<Url>)) {
+                    BuildObject(value, writeStream,
+                        content.Headers.ContentType.MediaType,
+                        Convert.ToInt32(content.Headers.GetValues(Constants.API_KEY)));
+                }
             });
         }
 
-        private void BuildObject(object obj, Stream stream, string contenttype, int apiVersion) {
+        private static void BuildObject(object obj, Stream stream, string contenttype, int apiVersion) {
             var type = obj.GetType();
             var properties = type.GetProperties();
 
