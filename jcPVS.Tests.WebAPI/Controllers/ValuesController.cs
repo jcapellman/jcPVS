@@ -1,14 +1,17 @@
-﻿using System.Collections.Generic;
-
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 using jcPVS.Tests.WebAPI.Objects;
-using Microsoft.AspNet.Mvc;
 
 namespace jcPVS.Tests.WebAPI.Controllers {
-    [Route("api/[controller]")]
-    public class ValuesController : Controller {
+    public class ValuesController : ApiController {
         [HttpGet]
-        public IEnumerable<TestObject> Get() {
-            return new List<TestObject> {new TestObject {ID = 1, Name = "Test"}};
+        public IEnumerable<TestObject> Get()
+        {
+            return new List<TestObject> {new TestObject {ID = 124, Name = "Test"}};
         }
     }
 }

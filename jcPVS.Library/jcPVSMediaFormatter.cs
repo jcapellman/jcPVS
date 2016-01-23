@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
+using System.Security.Policy;
 using System.Threading.Tasks;
-using Microsoft.Net.Http.Headers;
+
 using Newtonsoft.Json;
 
 namespace jcPVS.Library {
