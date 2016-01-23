@@ -4,14 +4,15 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using jcPVS.Library;
 using jcPVS.Tests.WebAPI.Objects;
 
 namespace jcPVS.Tests.WebAPI.Controllers {
-    public class ValuesController : ApiController {
+    public class ValuesController : jcPVSAPIController {
         [HttpGet]
-        public IEnumerable<TestObject> Get()
+        public TestObject Get()
         {
-            return new List<TestObject> {new TestObject {ID = 124, Name = "Test"}};
+            return Return(new TestObject {ID = 124, Name = "Test"});
         }
     }
 }
