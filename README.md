@@ -2,7 +2,7 @@
 
 A handy library to add versioning request support to WebAPI Responses.  Eventually I plan to add in support for handling entirely different endpoints.
 
-The idea for doing this little library was to handle the scenarios where you made a change to your WebAPI service that adds a new property to the JSON response.  All well and good, however if you have native apps across the board with varying times of approval (Apple Store vs Google Play/Windows) and coordinating client upgrades of platforms this becomes far more challenging that the code itself.  Thus the idea that you can tag attributes inside <b>DataContract<b/> with a version number and it would dynamically remove the properties that aren't available to the client requesting the data.
+The idea for doing this little library was to handle the scenarios where you made a change to your WebAPI service that adds a new property to the JSON response.  All well and good, however if you have native apps across the board with varying times of approval (Apple Store vs Google Play/Windows) and coordinating client upgrades of platforms this becomes far more challenging that the code itself.  Thus the idea that you can tag attributes inside <b>DataContract</b> with a version number and it would dynamically remove the properties that aren't available to the client requesting the data.
 
 Trying to make the implementation easy, I've provided a WebAPI service that implements a test object to get you started, but if you have an existing WebAPI Service follow the steps below.
 
